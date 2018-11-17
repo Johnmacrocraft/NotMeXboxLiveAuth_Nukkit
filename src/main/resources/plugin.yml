@@ -1,0 +1,44 @@
+name: NotMeXboxLiveAuth
+main: johnmacrocraft.notmexboxliveauth.NotMeXboxLiveAuth
+version: "1.1.0"
+api: ["1.0.7"]
+load: POSTWORLD
+author: Johnmacrocraft
+description: Allows specified players to bypass Xbox Live Auth!
+website: https://github.com/Johnmacrocraft/NotMeXboxLiveAuth_Nukkit
+commands:
+  xboxlist:
+    description: Manages the list of players allowed to bypass Xbox Live Auth
+    usage: /xboxlist <add|remove|list|invert|prefix|reload>
+    permission: notmexboxliveauth.command.xboxlist
+permissions:
+  notmexboxliveauth:
+    description: Allows using all NotMeXboxLiveAuth permissions
+    default: op
+    children:
+      notmexboxliveauth.command:
+        description: Allows using all NotMeXboxLiveAuth commands
+        default: op
+        children:
+          notmexboxliveauth.command.xboxlist:
+            description: Allows using xboxlist command
+            default: op
+            children:
+              notmexboxliveauth.command.xboxlist.add:
+                description: Allows using add option of xboxlist command
+                default: op
+              notmexboxliveauth.command.xboxlist.remove:
+                description: Allows using remove option of xboxlist command
+                default: op
+              notmexboxliveauth.command.xboxlist.list:
+                description: Allows using list option of xboxlist command
+                default: op
+              notmexboxliveauth.command.xboxlist.invert:
+                description: Allows using invert option of xboxlist command
+                default: op
+              notmexboxliveauth.command.xboxlist.prefix:
+                description: Allows using prefix option of xboxlist command
+                default: op
+              notmexboxliveauth.command.xboxlist.reload:
+                description: Allows using reload option of xboxlist command
+                default: op
