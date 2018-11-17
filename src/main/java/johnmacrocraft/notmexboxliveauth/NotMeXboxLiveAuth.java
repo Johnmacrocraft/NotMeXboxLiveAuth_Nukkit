@@ -38,7 +38,7 @@ public class NotMeXboxLiveAuth extends PluginBase implements Listener {
 		if(!this.getDataFolder().isDirectory()) {
 			this.getDataFolder().mkdir();
 		}
-		if(!new File(this.getDataFolder() + "\\config.yml").isFile()) {
+		if(!new File(this.getDataFolder() + "/config.yml").isFile()) {
 			this.saveDefaultConfig();
 		}
 		Boolean invert = this.useInvert();
@@ -51,8 +51,8 @@ public class NotMeXboxLiveAuth extends PluginBase implements Listener {
 			this.getServer().getPluginManager().disablePlugin(this);
 			return;
 		}
-		this.xboxlist = new Config(this.getDataFolder() + "\\xbox-list.txt", Config.ENUM);
-		this.prefixes = new Config(this.getDataFolder() + "\\prefixes.txt", Config.ENUM);
+		this.xboxlist = new Config(this.getDataFolder() + "/xbox-list.txt", Config.ENUM);
+		this.prefixes = new Config(this.getDataFolder() + "/prefixes.txt", Config.ENUM);
 		this.getServer().getPluginManager().registerEvents(this, this);
 	}
 
