@@ -1,1 +1,5 @@
 .idea/
+**/java/META-INF/
+out/
+target/
+*.iml

@@ -174,7 +174,7 @@ public class NotMeXboxLiveAuth extends PluginBase implements Listener {
 		return true;
 	}
 
-	public Boolean isBoolean(String str) {
+	private Boolean isBoolean(String str) {
 		switch(str.toLowerCase()) {
 			case "true":
 			case "yes":
