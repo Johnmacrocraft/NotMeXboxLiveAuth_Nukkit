@@ -199,7 +199,7 @@ public class NotMeXboxLiveAuth extends PluginBase implements Listener {
 		return false;
 	}
 
-	@EventHandler(priority = EventPriority.HIGHEST)
+	@EventHandler(priority = EventPriority.LOWEST)
 	public void onPlayerKick(PlayerKickEvent event) {
 		String name = event.getPlayer().getName().toLowerCase();
 		if((!event.getPlayer().getLoginChainData().isXboxAuthed() && !this.useInvert()) && (this.xboxlist.exists(name) || this.startsWithPrefix(name))) {

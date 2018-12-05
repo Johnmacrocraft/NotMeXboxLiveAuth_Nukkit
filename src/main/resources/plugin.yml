@@ -1,6 +1,6 @@
 name: NotMeXboxLiveAuth
 main: johnmacrocraft.notmexboxliveauth.NotMeXboxLiveAuth
-version: "1.1.0"
+version: "1.1.1"
 api: ["1.0.7"]
 load: POSTWORLD
 author: Johnmacrocraft
@@ -13,7 +13,7 @@ commands:
     permission: notmexboxliveauth.command.xboxlist
 permissions:
   notmexboxliveauth:
-    description: Allows using all NotMeXboxLiveAuth permissions
+    description: Allows using all the NotMeXboxLiveAuth permissions
     default: op
     children:
       notmexboxliveauth.command:
