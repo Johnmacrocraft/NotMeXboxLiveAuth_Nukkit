@@ -253,7 +253,7 @@ public class NotMeXboxLiveAuth extends PluginBase implements Listener {
 
 	public boolean startsWithPrefix(String name) {
 		for(String prefixes : this.prefixes.getAll().keySet()) {
-			if(name.indexOf(prefixes) == 0) {
+			if(name.toLowerCase().indexOf(prefixes) == 0) {
 				return true;
 			}
 		}
