@@ -19,7 +19,7 @@ import cn.nukkit.event.EventHandler;
 import cn.nukkit.event.EventPriority;
 import cn.nukkit.event.Listener;
 import cn.nukkit.event.player.PlayerKickEvent;
-import cn.nukkit.event.player.PlayerPreLoginEvent;
+import cn.nukkit.event.player.PlayerLoginEvent;
 import cn.nukkit.lang.TranslationContainer;
 import cn.nukkit.plugin.PluginBase;
 import cn.nukkit.utils.Config;
@@ -208,7 +208,7 @@ public class NotMeXboxLiveAuth extends PluginBase implements Listener {
 	}
 
 	@EventHandler(priority = EventPriority.HIGHEST)
-	public void onPlayerPreLogin(PlayerPreLoginEvent event) {
+	public void onPlayerLogin(PlayerLoginEvent event) {
 		if(!event.getPlayer().getLoginChainData().isXboxAuthed() && this.useInvert() && this.xboxlist.exists(event.getPlayer().getName().toLowerCase())) {
 			event.getPlayer().kick("disconnectionScreen.notAuthenticated", false);
 		}
