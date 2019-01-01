@@ -2,7 +2,7 @@
  *
  * NotMeXboxLiveAuth
  *
- * Copyright © 2018 Johnmacrocraft
+ * Copyright © 2018-2019 Johnmacrocraft
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
