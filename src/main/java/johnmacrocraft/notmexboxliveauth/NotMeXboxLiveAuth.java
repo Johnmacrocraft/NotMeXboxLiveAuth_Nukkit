@@ -41,6 +41,7 @@ public class NotMeXboxLiveAuth extends PluginBase implements Listener {
 		if(!new File(this.getDataFolder() + "/config.yml").isFile()) {
 			this.saveDefaultConfig();
 		}
+
 		Boolean invert = this.useInvert();
 		if(this.getServer().getPropertyBoolean("xbox-auth") == invert) {
 			this.getLogger().warning("To use NotMeXboxLiveAuth, you must " +
@@ -51,6 +52,7 @@ public class NotMeXboxLiveAuth extends PluginBase implements Listener {
 			this.getServer().getPluginManager().disablePlugin(this);
 			return;
 		}
+
 		this.xboxlist = new Config(this.getDataFolder() + "/xbox-list.txt", Config.ENUM);
 		this.prefixes = new Config(this.getDataFolder() + "/prefixes.txt", Config.ENUM);
 		this.getServer().getPluginManager().registerEvents(this, this);
@@ -202,6 +204,7 @@ public class NotMeXboxLiveAuth extends PluginBase implements Listener {
 	@EventHandler(priority = EventPriority.LOWEST)
 	public void onPlayerKick(PlayerKickEvent event) {
 		String name = event.getPlayer().getName().toLowerCase();
+
 		if((!event.getPlayer().getLoginChainData().isXboxAuthed() && !this.useInvert()) && (this.xboxlist.exists(name) || this.startsWithPrefix(name))) {
 			event.setCancelled();
 		}
