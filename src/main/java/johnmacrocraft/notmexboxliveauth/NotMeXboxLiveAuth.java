@@ -44,7 +44,8 @@ public class NotMeXboxLiveAuth extends PluginBase implements Listener {
 
 		Boolean invert = this.useInvert();
 		if(this.getServer().getPropertyBoolean("xbox-auth") == invert) {
-			this.getLogger().warning("To use NotMeXboxLiveAuth, you must " +
+			this.getLogger().warning(
+					"To use NotMeXboxLiveAuth, you must " +
 					(invert ? "disable (invert mode enabled)" : "enable (invert mode disabled)") +
 					" online mode in server.properties. Set value of xbox-auth to " +
 					(invert ? "false" : "true") + " to " + (invert ? "disable" : "enable") + " online mode."
@@ -157,7 +158,7 @@ public class NotMeXboxLiveAuth extends PluginBase implements Listener {
 					switch(args[0].toLowerCase()) {
 						case "prefix":
 							if(this.useInvert()) {
-								sender.sendMessage(TextFormat.YELLOW + "Please disable invert mode before trying to use guest prefix");
+								sender.sendMessage(TextFormat.YELLOW + "Please disable invert mode before using the guest prefix");
 							}
 							switch(args[1].toLowerCase()) {
 								case "add":
