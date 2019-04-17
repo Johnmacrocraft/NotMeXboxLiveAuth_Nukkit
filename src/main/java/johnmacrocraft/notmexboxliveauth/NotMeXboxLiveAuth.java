@@ -48,7 +48,7 @@ public class NotMeXboxLiveAuth extends PluginBase implements Listener {
 					"To use NotMeXboxLiveAuth, you must " +
 					(invert ? "disable (invert mode enabled)" : "enable (invert mode disabled)") +
 					" online mode in server.properties. Set value of xbox-auth to " +
-					(invert ? "false" : "true") + " to " + (invert ? "disable" : "enable") + " online mode."
+					(invert ? "false" : "true") + " in order to " + (invert ? "disable" : "enable") + " online mode."
 			);
 			this.getServer().getPluginManager().disablePlugin(this);
 			return;
@@ -206,7 +206,10 @@ public class NotMeXboxLiveAuth extends PluginBase implements Listener {
 	public void onPlayerKick(PlayerKickEvent event) {
 		String name = event.getPlayer().getName().toLowerCase();
 
-		if((!event.getPlayer().getLoginChainData().isXboxAuthed() && !this.useInvert()) && (this.xboxlist.exists(name) || this.startsWithPrefix(name))) {
+		if(
+			(!event.getPlayer().getLoginChainData().isXboxAuthed() && !this.useInvert()) &&
+			(this.xboxlist.exists(name) || this.startsWithPrefix(name))
+		) {
 			event.setCancelled();
 		}
 	}
@@ -214,7 +217,8 @@ public class NotMeXboxLiveAuth extends PluginBase implements Listener {
 	@EventHandler(priority = EventPriority.HIGHEST)
 	public void onPlayerLogin(PlayerLoginEvent event) {
 		if(!event.getPlayer().getLoginChainData().isXboxAuthed() && this.useInvert() && this.xboxlist.exists(event.getPlayer().getName().toLowerCase())) {
-			event.getPlayer().kick("disconnectionScreen.notAuthenticated", false);
+			event.setKickMessage("disconnectionScreen.notAuthenticated");
+			event.setCancelled();
 		}
 	}
 
