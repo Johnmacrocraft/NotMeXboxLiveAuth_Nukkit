@@ -196,7 +196,7 @@ public class NotMeXboxLiveAuth extends PluginBase implements Listener {
 
 	private boolean badPerm(CommandSender sender, String perm) {
 		if(!sender.hasPermission("notmexboxliveauth.command.xboxlist." + perm)) {
-			sender.sendMessage(new TranslationContainer(TextFormat.RED + "%commands.generic.permission"));
+			sender.sendMessage(this.getServer().getLanguage().translateString(TextFormat.RED + "%commands.generic.permission"));
 			return true;
 		}
 		return false;
